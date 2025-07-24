@@ -130,6 +130,7 @@ export function Contact() {
                 </div>
               </div>
             </div>
+            </div>
 
             {/* Right Side - Contact Form */}
             <div className="bg-white/90 backdrop-blur-sm border border-gray-100 p-12 rounded-sm shadow-artistic">
@@ -180,7 +181,6 @@ export function Contact() {
             </div>
           </div>
         </div>
-      </div>
       </div>
 
       {/* Elegant background elements */}
