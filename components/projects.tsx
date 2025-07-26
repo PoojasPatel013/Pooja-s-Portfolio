@@ -21,8 +21,12 @@ export function Projects() {
         "Automated model retraining workflows using Python scheduling",
       ],
       technologies: ["PyTorch", "Streamlit", "FastAPI", "Kubernetes", "Docker", "GeoPandas"],
-      category: "ml",
+      category: "DevOps",
       featured: true,
+      links: {
+        github: "https://github.com/yourusername/disaster-risk",
+        external: "https://devpost.com/software/disaster-risk"
+      }
     },
     {
       id: 2,
@@ -37,8 +41,12 @@ export function Projects() {
         "Enhanced sustainability awareness through data-driven insights",
       ],
       technologies: ["Streamlit", "MongoDB", "RandomForest", "GradientBoost", "Kaggle API"],
-      category: "ai",
+      category: "DevOps",
       featured: true,
+      links: {
+        github: "https://github.com/yourusername/carbontrace",
+        external: null
+      }
     },
     {
       id: 3,
@@ -54,6 +62,10 @@ export function Projects() {
       technologies: ["Flask", "Bootstrap", "Python", "API Integration"],
       category: "web",
       featured: true,
+      links: {
+        github: "https://github.com/PoojasPatel013/femplan",
+        external: "https://femplan.demo.link"
+      }
     },
     {
       id: 4,
@@ -70,7 +82,32 @@ export function Projects() {
       technologies: ["MERN Stack", "GPT Integration", "AI", "Community Features"],
       category: "ai",
       featured: false,
+      links: {
+        github: "https://github.com/PoojasPatel013/chrono-vault",
+        external: "https://techarhive.org/chronovault-research"
+      }
     },
+    {
+      id: 5,
+      title: "PUF – Python Universal Framework for Model Version Control",
+      role: "Creator & DevOps Engineer",
+      description:
+        "A Git-style version control system for machine learning models with support for CLI operations, analytics, web UI, GitHub integration, and model metrics comparison across TensorFlow, PyTorch, and scikit-learn.",
+      highlights: [
+        "Implements Git-like CLI commands: init, add, commit, push, checkout",
+        "Tracks versioned models with timestamped metadata and analytics",
+        "Includes web UI for model uploads, comparisons, statistics, and metrics",
+        "Supports PyTorch (.pt), TensorFlow (.h5/.pb), scikit-learn (.pkl)"
+      ],
+      technologies: ["Python", "Flask", "Click", "TensorFlow", "PyTorch", "scikit-learn"],
+      category: "DevOps",
+      featured: true,
+      links: {
+        github: "https://github.com/PoojasPatel013/puf",
+        external: null
+      }
+    }
+    
   ]
   
   const [selectedCategory, setSelectedCategory] = useState("all")
@@ -78,7 +115,7 @@ export function Projects() {
 
   const categories = [
     { key: "all", label: "All Projects" },
-    { key: "ml", label: "Machine Learning" },
+    { key: "DevOps", label: "DevOps" },
     { key: "ai", label: "AI Integration" },
     { key: "web", label: "Web Development" },
   ]
@@ -94,7 +131,7 @@ export function Projects() {
       <div
         className="absolute inset-0 opacity-12"
         style={{
-          backgroundImage: `url('/images/watercolor-clean.png')`,
+          backgroundImage: `url('/images/project.png')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -196,16 +233,23 @@ export function Projects() {
                         ))}
                       </div>
                     </div>
-
                     <div className="flex gap-3 pt-4">
-                      <Button size="sm" className="bg-black hover:bg-gray-800 text-white font-serif">
-                        <ExternalLink className="w-3 h-3 mr-2" />
-                        View
-                      </Button>
-                      <Button size="sm" variant="outline" className="font-serif bg-transparent">
-                        <Github className="w-3 h-3 mr-2" />
-                        Code
-                      </Button>
+                      {project.links?.external && (
+                        <a href={project.links.external} target="_blank" rel="noopener noreferrer">
+                          <Button size="sm" className="bg-black hover:bg-gray-800 text-white font-serif">
+                            <ExternalLink className="w-3 h-3 mr-2" />
+                            View
+                          </Button>
+                        </a>
+                      )}
+                      {project.links?.github && (
+                        <a href={project.links.github} target="_blank" rel="noopener noreferrer">
+                          <Button size="sm" variant="outline" className="font-serif bg-transparent">
+                            <Github className="w-3 h-3 mr-2" />
+                            Code
+                          </Button>
+                        </a>
+                      )}
                     </div>
                   </div>
                 </CardContent>
