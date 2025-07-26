@@ -1,62 +1,96 @@
 "use client"
 
-const projects = [
-  {
-    title: "Disaster Risk Prediction Platform",
-    role: "Project Creator & Lead Architect",
-    description:
-      "Designed and implemented a full-stack, containerized ML platform to predict and visualize global disaster risks.",
-    highlights: [
-      "Built a PyTorch-based prediction model",
-      "Developed interactive UI using Streamlit",
-      "Deployed via Docker & Kubernetes",
-      "Prioritized explainability and user accessibility",
-    ],
-    tech: ["PyTorch", "Streamlit", "Docker", "Kubernetes", "ML"],
-  },
-  {
-    title: "CarbonTrace – Carbon Footprint Tracker",
-    role: "Sole Developer & Product Designer",
-    description:
-      "Created an AI-powered sustainability tracking app to estimate individual carbon footprints based on user habits.",
-    highlights: [
-      "Integrated external APIs for data collection",
-      "Used gamification to improve user retention",
-      "Built with Streamlit UI and MongoDB",
-      "Emphasized accessible and actionable recommendations",
-    ],
-    tech: ["AI/ML", "Streamlit", "MongoDB", "API Integration"],
-  },
-  {
-    title: "FemPlan – Women's Wellness & Productivity App",
-    role: "End-to-End Developer & UX Designer",
-    description: "Developed a women-centric health platform for cycle tracking, wellness tips, and journaling.",
-    highlights: [
-      "Implemented backend in Flask with cycle prediction logic",
-      "Emphasized privacy, inclusivity, and digital health compliance",
-      "Created comprehensive wellness tracking system",
-    ],
-    tech: ["Flask", "Python", "Health Tech", "UX Design"],
-  },
-  {
-    title: "ChronoVault – Mental Wellness Platform",
-    role: "Founder & Technical Product Lead",
-    description:
-      "Built a community-based platform combining AI-assisted therapy, journaling, and behavioral analytics.",
-    highlights: [
-      "Integrated GPT-powered conversational support",
-      "Launched mood tracker and goal dashboard",
-      "Prioritized ethical AI practices in mental health tech",
-      "Created personalized wellness insights",
-    ],
-    tech: ["GPT Integration", "Mental Health Tech", "Analytics"],
-  },
-]
+import { useState } from "react"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { ExternalLink, Github } from "lucide-react"
 
 export function Projects() {
+  const projectsData = [
+    {
+      id: 1,
+      title: "Disaster Risk Prediction Platform",
+      role: "Project Creator & Lead Architect",
+      description:
+        "Designed and implemented a full-stack, containerized ML platform to predict and visualize global disaster risks.",
+      highlights: [
+        "Built PyTorch-based neural network for risk prediction",
+        "Integrated geospatial visualization with GeoPandas",
+        "Deployed interactive Streamlit dashboard via Docker & Kubernetes",
+        "Automated model retraining workflows using Python scheduling",
+      ],
+      technologies: ["PyTorch", "Streamlit", "FastAPI", "Kubernetes", "Docker", "GeoPandas"],
+      category: "ml",
+      featured: true,
+    },
+    {
+      id: 2,
+      title: "CarbonTrace – Carbon Footprint Tracker",
+      role: "Sole Developer & Product Designer",
+      description:
+        "Created an AI-powered sustainability tracking app to estimate individual carbon footprints based on user habits.",
+      highlights: [
+        "Integrated Kaggle API for datasets and Carbon Interface API",
+        "Implemented gamification to boost user engagement",
+        "Built RandomForest and GradientBoosting models",
+        "Enhanced sustainability awareness through data-driven insights",
+      ],
+      technologies: ["Streamlit", "MongoDB", "RandomForest", "GradientBoost", "Kaggle API"],
+      category: "ai",
+      featured: true,
+    },
+    {
+      id: 3,
+      title: "FemPlan – Women's Wellness & Productivity App",
+      role: "End-to-End Developer & UX Designer",
+      description: "Developed a women-centric health platform for cycle tracking, wellness tips, and journaling.",
+      highlights: [
+        "Created Flask backend with cycle prediction logic",
+        "Applied Bootstrap for UI responsiveness",
+        "Used DSA algorithms for personalized habit tracking",
+        "Emphasized privacy, inclusivity, and digital health compliance",
+      ],
+      technologies: ["Flask", "Bootstrap", "Python", "API Integration"],
+      category: "web",
+      featured: true,
+    },
+    {
+      id: 4,
+      title: "ChronoVault – Mental Wellness Platform",
+      role: "Founder & Technical Product Lead",
+      description:
+        "Built a community-based platform combining AI-assisted therapy, journaling, and behavioral analytics.",
+      highlights: [
+        "Integrated GPT-powered conversational AI support",
+        "Enabled human consultancy and peer-driven community space",
+        "Launched mood tracker, goal dashboard, and wellness reports",
+        "Prioritized ethical AI practices in mental health tech",
+      ],
+      technologies: ["MERN Stack", "GPT Integration", "AI", "Community Features"],
+      category: "ai",
+      featured: false,
+    },
+  ]
+  
+  const [selectedCategory, setSelectedCategory] = useState("all")
+  const [showAll, setShowAll] = useState(false)
+
+  const categories = [
+    { key: "all", label: "All Projects" },
+    { key: "ml", label: "Machine Learning" },
+    { key: "ai", label: "AI Integration" },
+    { key: "web", label: "Web Development" },
+  ]
+
+  const filteredProjects =
+    selectedCategory === "all" ? projectsData : projectsData.filter((project) => project.category === selectedCategory)
+
+  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 3)
+
   return (
-    <section className="min-h-screen bg-white py-24">
-      {/* Watercolor background */}
+    <section id="projects" className="py-20 bg-white relative">
+      {/* Clean watercolor background */}
       <div
         className="absolute inset-0 opacity-12"
         style={{
@@ -67,108 +101,129 @@ export function Projects() {
           transform: "rotate(270deg)",
         }}
       />
-      {/* Elegant grid background */}
-      <div
-        className="absolute inset-0 opacity-[0.02]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='140' height='140' viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='grid' width='28' height='28' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 28 0 L 0 0 0 28' fill='none' stroke='%23000000' strokeWidth='0.5'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='140' height='140' fill='url(%23grid)' /%3E%3C/svg%3E")`,
-        }}
-      />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
+          <div className="text-center mb-16">
             <div className="inline-block mb-6">
               <span className="bg-black text-white px-6 py-3 rounded-full text-xs font-bold tracking-[0.2em] uppercase">
                 ✦ Featured Works ✦
               </span>
             </div>
             <h2 className="text-6xl font-script text-black mb-6 tracking-wide">Projects</h2>
-            <div className="w-16 h-px bg-black mx-auto"></div>
+            <div className="w-16 h-px bg-black mx-auto mb-8"></div>
+            <p className="text-xl text-gray-600 font-serif tracking-wide max-w-3xl mx-auto">
+              Worked on several innovative projects using technologies like PyTorch, React.js, Flask, and cloud
+              platforms, focusing on sustainability, wellness, and disaster prediction.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-10 mb-20">
-            {projects.map((project, index) => (
-              <div key={index} className="group">
-                <div className="bg-white/80 backdrop-blur-sm border border-gray-100 p-10 rounded-sm hover:border-gray-300 transition-all duration-500 h-full shadow-artistic">
-                  {/* Project number */}
-                  <div className="flex items-center justify-between mb-8">
-                    <span className="text-7xl font-extralight text-gray-200 group-hover:text-black transition-colors tracking-wider">
+          {/* Category Filter */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {categories.map((category) => (
+              <button
+                key={category.key}
+                onClick={() => setSelectedCategory(category.key)}
+                className={`font-serif px-6 py-3 rounded-sm border transition-all duration-300 ${
+                  selectedCategory === category.key
+                    ? "bg-black text-white border-black"
+                    : "bg-white text-black border-gray-200 hover:bg-gray-50"
+                }`}
+              >
+                {category.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Tip Section */}
+          <div className="mb-12 bg-blue-50 border border-blue-200 p-6 rounded-sm">
+            <div className="flex items-start gap-4">
+              <span className="text-2xl">💡</span>
+              <div>
+                <h4 className="font-serif text-lg font-semibold text-black mb-2">Tip</h4>
+                <p className="font-serif text-gray-700">
+                  To filter the projects, click on the category tags above to explore different types of work.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Projects Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {displayedProjects.map((project, index) => (
+              <Card
+                key={project.id}
+                className="group shadow-artistic border border-gray-200 hover:shadow-lg transition-all duration-500"
+              >
+                <CardContent className="p-8">
+                  {/* Project Number */}
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="text-6xl font-extralight text-gray-200 group-hover:text-black transition-colors">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <div className="w-16 h-px bg-gray-200 group-hover:bg-black transition-colors"></div>
+                    <div className="w-12 h-px bg-gray-200 group-hover:bg-black transition-colors"></div>
                   </div>
 
                   <div className="space-y-6">
                     <div>
-                      <h3 className="text-2xl font-serif text-black mb-3 group-hover:text-gray-800 transition-colors tracking-wide">
+                      <h3 className="text-xl font-serif text-black mb-2 group-hover:text-gray-800 transition-colors">
                         {project.title}
                       </h3>
-                      <p className="text-gray-500 font-light text-sm uppercase tracking-[0.1em]">{project.role}</p>
+                      <p className="text-gray-500 text-sm font-serif uppercase tracking-wider">{project.role}</p>
                     </div>
 
-                    <p className="text-gray-600 leading-relaxed font-light tracking-wide">{project.description}</p>
+                    <p className="text-gray-600 font-serif leading-relaxed text-sm">{project.description}</p>
 
                     <div>
-                      <h4 className="text-black font-light mb-4 text-sm uppercase tracking-[0.1em]">Key Highlights</h4>
-                      <ul className="space-y-3">
-                        {project.highlights.map((highlight, idx) => (
-                          <li key={idx} className="flex items-start gap-4">
-                            <div className="w-1 h-1 bg-black rounded-full mt-3 flex-shrink-0"></div>
-                            <span className="text-gray-500 text-sm leading-relaxed font-light tracking-wide">
-                              {highlight}
-                            </span>
+                      <h4 className="text-black font-serif mb-3 text-sm uppercase tracking-wider">Key Highlights</h4>
+                      <ul className="space-y-2">
+                        {project.highlights.slice(0, 2).map((highlight, idx) => (
+                          <li key={idx} className="flex items-start gap-3">
+                            <div className="w-1 h-1 bg-black rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-500 text-sm font-serif leading-relaxed">{highlight}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
-                    <div className="pt-6 border-t border-gray-100">
-                      <h4 className="text-black font-light mb-4 text-sm uppercase tracking-[0.1em]">Technologies</h4>
-                      <div className="flex flex-wrap gap-3">
-                        {project.tech.map((tech, idx) => (
-                          <span
-                            key={idx}
-                            className="bg-white border border-gray-200 px-4 py-2 rounded-full text-black text-xs font-light"
-                          >
+                    <div>
+                      <h4 className="text-black font-serif mb-3 text-sm uppercase tracking-wider">Technologies</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {project.technologies.slice(0, 4).map((tech, idx) => (
+                          <Badge key={idx} variant="outline" className="text-xs font-serif">
                             {tech}
-                          </span>
+                          </Badge>
                         ))}
                       </div>
                     </div>
+
+                    <div className="flex gap-3 pt-4">
+                      <Button size="sm" className="bg-black hover:bg-gray-800 text-white font-serif">
+                        <ExternalLink className="w-3 h-3 mr-2" />
+                        View
+                      </Button>
+                      <Button size="sm" variant="outline" className="font-serif bg-transparent">
+                        <Github className="w-3 h-3 mr-2" />
+                        Code
+                      </Button>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
 
-          {/* Meditation illustration */}
-          <div className="flex justify-center">
-            <div className="relative">
-              <div className="w-72 h-72 flex items-center justify-center">
-                <img
-                  src="/images/meditation-illustration.png"
-                  alt="Meditation illustration"
-                  width={260}
-                  height={260}
-                  className="animate-float-slow opacity-80"
-                />
-              </div>
-
-              {/* Elegant floating labels */}
-              <div className="absolute -top-6 -left-12 animate-float-medium">
-                <div className="bg-white text-black px-4 py-2 rounded-full text-xs font-light tracking-wider shadow-lg border border-gray-100">
-                  FOCUS
-                </div>
-              </div>
-
-              <div className="absolute -bottom-6 -right-12 animate-float-fast">
-                <div className="bg-gray-800 text-white px-4 py-2 rounded-full text-xs font-light tracking-wider shadow-lg">
-                  BALANCE
-                </div>
-              </div>
+          {/* Show More/Less Button */}
+          {filteredProjects.length > 3 && (
+            <div className="text-center">
+              <Button
+                onClick={() => setShowAll(!showAll)}
+                className="bg-black hover:bg-gray-800 text-white font-serif px-8 py-3"
+              >
+                {showAll ? "Show Less Projects" : "Show All Projects"}
+              </Button>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </section>

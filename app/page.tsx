@@ -6,6 +6,8 @@ import { Projects } from "@/components/projects"
 import { Contact } from "@/components/contact"
 import { Navbar } from "@/components/navbar"
 import { FloatingDoodleSection } from "@/components/floating-doodle-section"
+import { Skills } from "@/components/skills"
+import { Certifications } from "@/components/certifications"
 
 export default function Home() {
   return (
@@ -26,6 +28,10 @@ export default function Home() {
       <section id="experience">
         <Experience />
       </section>
+
+      <Skills/>
+
+      <Certifications/>      
 
       <section id="projects">
         <Projects />
