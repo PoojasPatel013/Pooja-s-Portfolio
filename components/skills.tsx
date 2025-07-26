@@ -80,12 +80,12 @@ export function Skills() {
                   className="w-full max-w-[1100px] mx-auto shadow-lg hover:shadow-xl transition-shadow"
                 >
                   <CardHeader className="bg-gradient-to-r from-blue-50 to-purple-50">
-                    <CardTitle className="text-xl text-slate-900">{category.title}</CardTitle>
+                    <CardTitle className="text-xxl text-slate-900">{category.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="p-6">
                     <div className="flex flex-wrap gap-2">
                       {category.skills.map((skill, idx) => (
-                        <Badge key={idx} variant="secondary" className="mb-2">
+                        <Badge key={idx} variant="secondary" className="mb-2 text-xl font-medium">
                           {skill}
                         </Badge>
                       ))}
