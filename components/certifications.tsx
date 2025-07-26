@@ -79,11 +79,12 @@ export function Certifications() {
                 </div>
                 <Button
                   className="bg-white hover:bg-gray-100 text-black font-serif tracking-wide flex items-center gap-2 w-fit"
-                  onClick={() => window.open("#", "_blank")}
+                  onClick={() => window.open("https://www.credly.com/users/pooja-patel.8070755d", "_blank")}
                 >
                   <ExternalLink className="w-4 h-4" />
                   Check Out Credly Profile
                 </Button>
+
               </div>
             </div>
           </div>
