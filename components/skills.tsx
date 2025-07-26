@@ -71,13 +71,16 @@ export function Skills() {
           </div>
 
           {/* Skills Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skillCategories
               .filter((category) => category.key === activeTab)
               .map((category, index) => (
-                <Card key={index} className="shadow-lg hover:shadow-xl transition-shadow">
+                <Card
+                  key={index}
+                  className="w-full max-w-[1100px] mx-auto shadow-lg hover:shadow-xl transition-shadow"
+                >
                   <CardHeader className="bg-gradient-to-r from-blue-50 to-purple-50">
-                    <CardTitle className="text-lg text-slate-900">{category.title}</CardTitle>
+                    <CardTitle className="text-xl text-slate-900">{category.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="p-6">
                     <div className="flex flex-wrap gap-2">
