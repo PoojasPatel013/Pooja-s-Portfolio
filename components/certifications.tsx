@@ -90,6 +90,33 @@ export function Certifications() {
           </div>
         </div>
       </div>
+      {/* Meditation illustration */}
+      <div className="flex justify-center">
+            <div className="relative">
+              <div className="w-72 h-72 flex items-center justify-center">
+                <img
+                  src="/images/meditation-illustration.png"
+                  alt="Meditation illustration"
+                  width={260}
+                  height={260}
+                  className="animate-float-slow opacity-80"
+                />
+              </div>
+
+              {/* Elegant floating labels */}
+              <div className="absolute -left-10 animate-float-medium">
+                <div className="bg-black text-white px-4 py-2 rounded-full text-xs font-light tracking-wider shadow-lg border border-gray-100">
+                  FOCUS
+                </div>
+              </div>
+
+              <div className="absolute -bottom-6 -right-12 animate-float-fast">
+                <div className="bg-gray-800 text-white px-4 py-2 rounded-full text-xs font-light tracking-wider shadow-lg">
+                  BALANCE
+                </div>
+              </div>
+            </div>
+          </div>
     </section>
   )
 }
