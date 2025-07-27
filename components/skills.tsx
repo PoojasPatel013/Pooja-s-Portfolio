@@ -40,13 +40,18 @@ export function Skills() {
 
   return (
     <section
-      className="py-20 bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/skills.png')" }}
+      className="py-20 bg-cover bg-center relative"
+      style={{ backgroundImage: "url('/images/skill.png')" }}
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Skills</h2>
+            <div className="inline-block mb-4">
+              <span className="bg-black text-white px-6 py-3 rounded-full text-xs font-bold tracking-[0.2em] uppercase">
+                ✦ Core Competencies ✦
+              </span>
+            </div>
+            <h2 className="text-5xl font-script text-slate-900 mb-4 tracking-wide">Skills</h2>
             <div className="w-16 h-1 bg-blue-600 mx-auto"></div>
           </div>
 
@@ -80,12 +85,12 @@ export function Skills() {
                   className="w-full max-w-[1100px] mx-auto shadow-lg hover:shadow-xl transition-shadow"
                 >
                   <CardHeader className="bg-gradient-to-r from-blue-50 to-purple-50">
-                    <CardTitle className="text-xxl text-slate-900">{category.title}</CardTitle>
+                    <CardTitle className="text-xxl text-slate-900 font-script tracking-wide">{category.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="p-6">
                     <div className="flex flex-wrap gap-2">
                       {category.skills.map((skill, idx) => (
-                        <Badge key={idx} variant="secondary" className="mb-2 text-xl font-medium">
+                        <Badge key={idx} variant="secondary" className="mb-2 text-xl font-medium font-serif">
                           {skill}
                         </Badge>
                       ))}
