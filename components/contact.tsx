@@ -185,7 +185,7 @@ export function Contact() {
 
       {/* Elegant background elements */}
       <div className="absolute top-1/3 right-1/4 opacity-[0.03] animate-float-slow">
-        <img src="/images/faces-pattern.png" alt="Artistic faces pattern" width={180} height={180} />
+        <img src="/images/watercolor-clean.png" alt="Artistic faces pattern" width={180} height={180} />
       </div>
 
       {/* Minimalist envelope doodle */}

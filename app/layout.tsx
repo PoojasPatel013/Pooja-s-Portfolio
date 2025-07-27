@@ -26,8 +26,11 @@ const crimson = Crimson_Text({
 
 export const metadata: Metadata = {
   title: "PoojaX",
-  description: "Created with v0",
-  generator: "v0.dev",
+  description: "Created by pooja patel",
+  generator: "pooja patel",
+  icons: {
+    icon: "http://localhost:3000/favicon.png",
+  },
 }
 
 export default function RootLayout({
@@ -37,6 +40,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${dancingScript.variable} ${kalam.variable} ${playfair.variable} ${crimson.variable}`}>
+      {/* <head>
+        <link rel="icon" href="/favicon.png" type="image/png" />
+      </head> */}
       <body>{children}</body>
     </html>
   )
