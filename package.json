@@ -44,7 +44,6 @@
     "cmdk": "^1.0.6",
     "date-fns": "^2.30.0",
     "dotenv": "^17.2.0",
-    "emailjs-com": "^3.2.0",
     "embla-carousel-react": "^8.1.0",
     "framer-motion": "^12.23.9",
     "input-otp": "^1.4.1",
