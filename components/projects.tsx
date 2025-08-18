@@ -20,12 +20,12 @@ export function Projects() {
         "Planned sprints for a mock product launch",
         "Simulated end-to-end product management processes",
       ],
-      technologies: ["Notion", "Miro", "Jira", "Product Strategy", "KPI Tracking"],
+      technologies: ["Notion", "Miro", "Jira","Figma", "Product Strategy", "KPI Tracking"],
       category: "pm",
       featured: true,
       links:{
-        github:"",
-        external:""
+        github:"https://github.com/PoojasPatel013/PM-Dashboard-design--co",
+        external:"https://poojaspatel013.github.io/PM-Dashboard--case-study/"
       }
     },
     {
@@ -35,16 +35,16 @@ export function Projects() {
       description:
         "Researched market trends and defined problem → solution → impact using comprehensive product management methodologies.",
       highlights: [
-        "Used Afsana/Asana for strategic roadmap planning",
+        "Used Clickup and Asana for strategic roadmap planning",
         "Designed journey maps and prioritization matrices in Whimsical/Miro",
         "Structured execution with ClickUp for sprint planning and MVP features",
         "Simulated end-to-end product delivery with metrics dashboards",
       ],
-      technologies: ["Asana", "Whimsical", "Miro", "ClickUp", "Product Strategy", "Market Research"],
+      technologies: ["Asana", "Whimsical", "Miro", "ClickUp", "Notion", "Product Strategy", "Market Research"],
       category: "pm",
       featured: true,
       links:{
-        external:""
+        external:"https://comet-casestudy.notion.site/Comet-AI-Agentic-Browser-by-Perplexity-24f0127bfce18006bdcbcebc7915ebf2"
       }
     },
     {
@@ -85,6 +85,25 @@ export function Projects() {
       links: {
         github: "https://github.com/PoojasPatel013/carbontrace",
         external: null
+      }
+    },
+    {
+      id: 5,
+      title: "FemPlan – Women's Wellness & Productivity App",
+      role: "End-to-End Developer & UX Designer",
+      description: "Developed a women-centric health platform for cycle tracking, wellness tips, and journaling.",
+      highlights: [
+        "Created Flask backend with cycle prediction logic",
+        "Applied Bootstrap for UI responsiveness",
+        "Used DSA algorithms for personalized habit tracking",
+        "Emphasized privacy, inclusivity, and digital health compliance",
+      ],
+      technologies: ["Flask", "Bootstrap", "Python", "API Integration"],
+      category: "web",
+      featured: true,
+      links: {
+        github: "https://github.com/PoojasPatel013/femplan",
+        external: "https://femplan.demo.link"
       }
     },
     {
@@ -138,6 +157,7 @@ export function Projects() {
     { key: "DevOps", label: "DevOps" },
     { key: "pm", label: "Product Management" },
     { key: "ai", label: "AI Integration" },
+    { key: "web", label: "Web Development" },
   ]
 
   const filteredProjects =
