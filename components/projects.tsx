@@ -10,6 +10,45 @@ export function Projects() {
   const projectsData = [
     {
       id: 1,
+      title: "PM Dashboard – Case Study",
+      role: "Product Manager (Case Study)",
+      description:
+        "Created an interactive project management dashboard simulating KPI tracking, roadmap visualization, and sprint progress monitoring.",
+      highlights: [
+        "Applied Notion, Miro, and Jira to design workflows",
+        "Created comprehensive user journey maps",
+        "Planned sprints for a mock product launch",
+        "Simulated end-to-end product management processes",
+      ],
+      technologies: ["Notion", "Miro", "Jira", "Product Strategy", "KPI Tracking"],
+      category: "pm",
+      featured: true,
+      links:{
+        github:"",
+        external:""
+      }
+    },
+    {
+      id: 2,
+      title: "Comet AI Browser – Product Case Study",
+      role: "Product Manager (Case Study)",
+      description:
+        "Researched market trends and defined problem → solution → impact using comprehensive product management methodologies.",
+      highlights: [
+        "Used Afsana/Asana for strategic roadmap planning",
+        "Designed journey maps and prioritization matrices in Whimsical/Miro",
+        "Structured execution with ClickUp for sprint planning and MVP features",
+        "Simulated end-to-end product delivery with metrics dashboards",
+      ],
+      technologies: ["Asana", "Whimsical", "Miro", "ClickUp", "Product Strategy", "Market Research"],
+      category: "pm",
+      featured: true,
+      links:{
+        external:""
+      }
+    },
+    {
+      id: 3,
       title: "Disaster Risk Prediction Platform",
       role: "Project Creator & Lead Architect",
       description:
@@ -24,12 +63,12 @@ export function Projects() {
       category: "DevOps",
       featured: true,
       links: {
-        github: "https://github.com/yourusername/disaster-risk",
+        github: "https://github.com/PoojasPatel013/Hackathon-May",
         external: "https://devpost.com/software/disaster-risk"
       }
     },
     {
-      id: 2,
+      id: 4,
       title: "CarbonTrace – Carbon Footprint Tracker",
       role: "Sole Developer & Product Designer",
       description:
@@ -44,31 +83,12 @@ export function Projects() {
       category: "DevOps",
       featured: true,
       links: {
-        github: "https://github.com/yourusername/carbontrace",
+        github: "https://github.com/PoojasPatel013/carbontrace",
         external: null
       }
     },
     {
-      id: 3,
-      title: "FemPlan – Women's Wellness & Productivity App",
-      role: "End-to-End Developer & UX Designer",
-      description: "Developed a women-centric health platform for cycle tracking, wellness tips, and journaling.",
-      highlights: [
-        "Created Flask backend with cycle prediction logic",
-        "Applied Bootstrap for UI responsiveness",
-        "Used DSA algorithms for personalized habit tracking",
-        "Emphasized privacy, inclusivity, and digital health compliance",
-      ],
-      technologies: ["Flask", "Bootstrap", "Python", "API Integration"],
-      category: "web",
-      featured: true,
-      links: {
-        github: "https://github.com/PoojasPatel013/femplan",
-        external: "https://femplan.demo.link"
-      }
-    },
-    {
-      id: 4,
+      id: 6,
       title: "ChronoVault – Mental Wellness Platform",
       role: "Founder & Technical Product Lead",
       description:
@@ -88,7 +108,7 @@ export function Projects() {
       }
     },
     {
-      id: 5,
+      id: 7,
       title: "PUF – Python Universal Framework for Model Version Control",
       role: "Creator & DevOps Engineer",
       description:
@@ -116,8 +136,8 @@ export function Projects() {
   const categories = [
     { key: "all", label: "All Projects" },
     { key: "DevOps", label: "DevOps" },
+    { key: "pm", label: "Product Management" },
     { key: "ai", label: "AI Integration" },
-    { key: "web", label: "Web Development" },
   ]
 
   const filteredProjects =
